@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FunctionDemo</string>
+    <string name="headerbehavior">com.fzj.functiondemo.binding.HeaderBehavior</string>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.fzj.functiondemo">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FunctionDemo">
+        <activity android:name=".binding.data.DataBinding"></activity>
+        <activity android:name=".binding.view.ViewBinding"></activity>
+        <activity android:name=".binding.ClickBtnActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="rerecycler"
+                    android:path="/and"
+                    android:scheme="demo" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".binding.ScrollActiivty"></activity>
+        <activity android:name=".binding.SpanActivity"></activity>
+        <activity android:name=".binding.AnimActivity"></activity>
+        <activity android:name=".binding.CalendarActivity"></activity>
+        <activity android:name=".binding.ReRecyclerVIew"></activity>
+        <activity android:name=".binding.WebAc"></activity>
+
+        <receiver android:name=".binding.TheFirstWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/my_app_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".binding.StopRingBroadCast"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_SCANNER_STARTED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
