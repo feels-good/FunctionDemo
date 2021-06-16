@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'com.github.dcendents.android-maven'
 }
-
+group = 'com.github.feels-good'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
